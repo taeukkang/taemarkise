@@ -5164,7 +5164,12 @@
             }
           }
           localStorage.setItem("lastPresentation", data); // Save to LocalStorage
-          remark.create({ source: data });
+          remark.create({
+            source: data,
+            navigation: {
+              scroll: false,
+            },
+          });
         };
 
         var getOrigin = function (url) {
@@ -5319,20 +5324,4 @@
       });
     </script>
   </body>
-  <auto-scroll
-    ><template shadowrootmode="closed"
-      ><div
-        style="
-          transform: translateZ(0px);
-          display: none;
-          position: fixed;
-          left: 0px;
-          top: 0px;
-          width: 100%;
-          height: 100%;
-          z-index: 2147483647;
-          background-repeat: no-repeat;
-        "
-      ></div></template
-  ></auto-scroll>
 </html>
